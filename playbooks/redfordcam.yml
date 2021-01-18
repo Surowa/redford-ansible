@@ -4,11 +4,11 @@
   tasks:
 
     - name: Add an Apt signing key of Pilight
-       ansible.builtin.apt_key:
+      ansible.builtin.apt_key:
         id: F2FB87E2E57085B61137D70ACC28DD82EF4C718C
         url: http://apt.pilight.org/
         state: present
     - name: Add Pilight repo
-       ansible.builtin.apt_repository:
+      ansible.builtin.apt_repository:
         repo: deb http://apt.pilight.org/ stable main
         state: present
