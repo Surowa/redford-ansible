@@ -2,7 +2,6 @@
   gather_facts: false
   hosts: redford-cam
   tasks:
-
     - name: Add an Apt signing key of Pilight
       ansible.builtin.apt_key:
         id: F2FB87E2E57085B61137D70ACC28DD82EF4C718C
