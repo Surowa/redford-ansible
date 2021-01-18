@@ -1,6 +1,7 @@
-- name: Redford-Cam 
-  hosts: redford-cam
+- name: Redford Cam 
+  hosts: localhost
   tasks:
+  
     - name: Add specified repository into sources list using specified filename
       ansible.builtin.apt_repository:
         repo: deb http://apt.pilight.org/ stable main
