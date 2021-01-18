@@ -1,0 +1,106 @@
+{
+	"devices": {
+		"lamp1": {
+			"protocol": [ "kaku_switch" ],
+			"id": [{
+				"id": 25544186,
+				"unit": 0
+			}],
+			"state": "off"
+		},
+		"lamp2": {
+			"protocol": [ "kaku_switch" ],
+			"id": [{
+				"id": 25544186,
+				"unit": 1
+			}],
+			"state": "off"
+		},
+		"aquariumpomp": {
+			"protocol": [ "kaku_switch" ],
+			"id": [{
+				"id": 33102848,
+				"unit": 3
+			}],
+			"state": "off"
+		},
+		"televisie": {
+			"protocol": [ "lirc" ],
+			"id": [{
+				"remote": "samsung"
+			}],
+			"code": "000000000000e204",
+			"repeat": 1,
+			"button": "KEY_POWER"
+		},
+		"lamp3": {
+			"protocol": [ "kaku_switch" ],
+			"id": [{
+				"id": 25544186,
+				"unit": 2
+			}],
+			"state": "on"
+		}
+	},
+	"rules": {},
+	"gui": {
+		"lamp1": {
+			"name": "TV-schakelaar",
+			"group": [ "Woonkamer" ],
+			"media": [ "all" ]
+		},
+		"lamp2": {
+			"name": "Lamp woonkamer",
+			"group": [ "Woonkamer" ],
+			"media": [ "all" ]
+		},
+		"lamp3": {
+			"name": "Lamp slaapkamer",
+			"group": [ "Slaapkamer" ],
+			"media": [ "all" ]
+		},
+		"aquariumpomp": {
+			"name": "Zuurstofpomp vissen",
+			"group": [ "Woonkamer" ],
+			"media": [ "all" ]
+		}
+	},
+	"settings": {
+		"log-level": 6,
+		"pid-file": "/var/run/pilight.pid",
+		"log-file": "/var/log/pilight.log",
+		"webserver-enable": 1,
+		"webserver-root": "/usr/local/share/pilight/webgui",
+		"webserver-http-port": 5001,
+		"webserver-https-port": 5002,
+		"webserver-cache": 1,
+		"gpio-platform": "raspberrypi3"
+	},
+	"hardware": {
+		"433gpio": {
+			"sender": 1,
+			"receiver": 0
+		}
+	},
+	"registry": {
+		"webserver": {
+			"ssl": {
+				"certificate": {
+					"location": "/etc/pilight/pilight.pem"
+				}
+			}
+		},
+		"pilight": {
+			"version": {
+				"current": "8.1.5"
+			}
+		},
+		"hardware": {
+			"RF433": {
+				"mingaplen": 4420,
+				"maxgaplen": 72900,
+				"minrawlen": 26,
+				"maxrawlen": 400
+			}
+		}
+	}

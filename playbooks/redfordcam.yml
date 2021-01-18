@@ -2,11 +2,11 @@
   hosts: localhost
   tasks:
 
-    - name: Add specified repository into sources list using specified filename #Adds pilight apt source
+    - name: Add pilight apt source
       apt_repository:
         repo: deb http://apt.pilight.org/ stable main
         state: present
-    - name: Add an Apt signing key, will not download if present #Adds pilight apt key
+    - name: Add pilight apt key
       apt_key:
         id: F2FB87E2E57085B61137D70ACC28DD82EF4C718C
         url: http://apt.pilight.org/
@@ -19,3 +19,18 @@
           - cec-utils
           - pilight
         state: latest
+    - name: Stop service pilight, if started
+      service:
+        name: pilight
+        state: stopped
+    - name: Template pilight json config to /etc/pilight
+      template:
+        src: /home/pi/redford-ansible/files/pilight/config.json
+        dest: /etc/pilight/config.json
+        owner: pi
+        group: pi
+        mode: '0755'
+    - name: Started service pilight, if stopped
+      service:
+        name: pilight
+        state: started
