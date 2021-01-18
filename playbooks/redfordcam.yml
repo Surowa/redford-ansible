@@ -27,8 +27,8 @@
       template:
         src: /home/pi/redford-ansible/files/pilight/config.json
         dest: /etc/pilight/config.json
-        owner: pi
-        group: pi
+        owner: root
+        group: root
         mode: '0755'
     - name: Started service pilight, if stopped
       service:
