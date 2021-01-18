@@ -1,13 +1,13 @@
 - name: Redford Cam 
   hosts: localhost
   tasks:
-  
+
     - name: Add specified repository into sources list using specified filename
-      ansible.builtin.apt_repository:
+      apt_repository:
         repo: deb http://apt.pilight.org/ stable main
         state: present
     - name: Add an Apt signing key, will not download if present
-      ansible.builtin.apt_key:
+      apt_key:
         id: F2FB87E2E57085B61137D70ACC28DD82EF4C718C
         url: http://apt.pilight.org/
         state: present
