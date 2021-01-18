@@ -1,5 +1,4 @@
 - name: Redford-Cam 
-  gather_facts: false
   hosts: redford-cam
   tasks:
     - name: Add an Apt signing key, will not download if present
