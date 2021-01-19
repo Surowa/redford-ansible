@@ -1,0 +1,19 @@
+# Installs Redford-Speech docker based server (custom port)
+docker.io
+- name: Redfordspeech
+  hosts: localhost #Should be ran on localhost
+  tasks:
+    - name: Install the latest version of apps needed for Redfordspeech to function
+      package:
+        name:
+          - docker.io
+    - name: Start service docker, if stopped
+      service:
+        name: docker
+        state: started
+        enabled: yes
+    - name: adding existing user 'pi' to group docker
+      user:
+        name: 'pi'
+        groups: docker
+        append: yes

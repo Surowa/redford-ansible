@@ -1,5 +1,40 @@
 - name: Matrix
-  hosts: matrix
+  hosts: matrix #Should be ran to this host remotely as reboots are required.
   tasks:
   
-    - name: Add pilight apt source
+    - name: Add Matrix apt source
+      apt_repository:
+        repo: deb https://apt.matrix.one/raspbian buster main
+        state: present
+    - name: Add Matrix APT key
+      apt_key:
+        url: https://apt.matrix.one/doc/apt-key.gpg
+        state: present
+    - name: Run the equivalent of "apt-get update" as a separate step
+      apt:
+        update_cache: yes
+    - name: Unconditionally reboot the machine with all defaults
+      reboot:
+    - name: Install the latest version of apps needed for Matrix to function
+      package:
+        name:
+          - matrixio-kernel-modules
+    - name: Unconditionally reboot again
+      reboot:
+    - name: Install the latest version of supporting apps needed for Matrix to function
+      package:
+        name:
+          - portaudio19-dev
+          - python3
+          - python3-pip
+    - name: Install pyaudio python package
+      pip:
+        name: pyaudio
+    - name: Template asound.conf to etc folder
+      template:
+        src: /home/pi/redford-ansible/files/matrix/asound.conf
+        dest: /etc/asound.conf
+        owner: root
+        group: root
+        mode: '0755'
+    
