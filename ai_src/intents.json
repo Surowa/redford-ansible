@@ -1,0 +1,63 @@
+{"intents": [
+    {"tag": "begroeting",
+     "patterns": ["Hoi daar", "Hoe is het met je", "Is daar iemand?","Hey","Hola", "Hallo", "Goedendag"],
+     "responses": ["Hoi, dankje voor je bericht", "Goed om je te zien", "Hoe daar, hoe kan ik je helpen?"],
+     "context": [""]
+    },
+    {"tag": "afscheid",
+     "patterns": ["Doei", "Zie je later", "Tot ziens", "Goed je gesproken te hebben, dag", "Tot de volgende keer"],
+     "responses": ["Tot ziens!", "Prettige dag gewenst", "Doei, tot snel!"],
+     "context": [""]
+    },
+    {"tag": "bedankt",
+     "patterns": ["Dankje", "Dankjewel", "Bedankt, dat was nuttig", "Super, dankjewel", "Bedankt dat je me geholpen hebt"],
+     "responses": ["Graag gedaan", "Geen dank", "Het was me een eer je te kunnen helpen"],
+     "context": [""]
+    },
+    {"tag": "geen_antwoord",
+     "patterns": [],
+     "responses": ["Ik snap je vraag niet", "Zou je me meer informatie kunnen geven?", "Ik weet niet zeker of ik je vraag goed begrepen heb"],
+     "context": [""]
+    },
+    {"tag": "opties",
+     "patterns": ["Waarmee kun je me helpen?", "Wat kun je allemaal", "Wat voor hulp biedt je aan?", "Hoe kun je van dienst zijn", "Wat zijn je diensten?"],
+     "responses": ["Waarmee niet?", "Echt praktisch alles"],
+     "context": [""]
+    },
+    {"tag": "weer",
+        "patterns": ["Wat wordt het weer vandaag?", "Gaat het vandaag regenen?", "Weet je wat voor weer het wordt?", "Krijgen we een zonnige dag?", "Gaat het sneeuwen vandaag?"],
+        "responses": ["WEER_RESPONSE"],
+        "context": [""]
+    },
+    {"tag": "corona",
+        "patterns": ["Kun je me vertellen hoe besmettelijk het coronavirus nu is?", "Wat zijn de laatste cijfers van het RIVM", "Wat is het laatste nieuws over COVID-19?", "Hoe zit het met corona?", "Heb je een update over het coronavirus?"],
+        "responses": ["CORONA_RESPONSE"],
+        "context": ["corona"]
+    },
+    {"tag": "vissenlampaan",
+        "patterns": ["Zet de lamp aan", "Kun je het licht van het aquarium aan doen?", "Kun je de lamp van het aquarium aan doen?", "Doe alsjeblieft de lamp aan van het aquarium", "Zet aquariumlamp aan", "Zet aquariumlicht aan", "Licht aquarium aanzetten"],
+        "responses": ["LAMP_AAN_RESPONSE"],
+        "context": ["aan"]
+    },
+    {"tag": "vissenlampuit",
+        "patterns": ["Doe de lamp uit van het aquarium", "Kun je het licht van het aquarium uit doen?", "Kun je de lamp van het aquarium uit doen?", "Doe alsjeblieft de lamp uit van het aquarium", "Zet aquariumlamp uit", "Zet aquariumlicht uit", "Licht aquarium uitzetten"],
+        "responses": ["LAMP_UIT_RESPONSE"],
+        "context": ["uit"]
+    },
+    {"tag": "pompaan",
+        "patterns": ["Doe de pomp aan van het aquarium", "Kun je de pomp van het aquarium aan doen?", "Kun je de pomp van het aquarium aan doen?", "Doe alsjeblieft de pomp aan van het aquarium", "Zet aquariumpomp aan", "Zet aquariumpomp aan", "Aquariumpomp aanzetten"],
+        "responses": ["POMP_AAN_RESPONSE"],
+        "context": ["aan"]
+    },
+    {"tag": "pompuit",
+        "patterns": ["Doe de pomp uit van het aquarium", "Kun je de pomp van het aquarium uit doen?", "Kun je de pomp van het aquarium uit doen?", "Doe alsjeblieft de pomp uit van het aquarium", "Zet aquariumpomp uit", "Zet aquariumpomp uit", "Aquariumpomp uitzetten"],
+        "responses": ["POMP_UIT_RESPONSE"],
+        "context": ["uit"]
+    },
+    {"tag": "apotheek",
+     "patterns": ["Geef me een apotheek", "Zoek apotheek", "Lijst van apotheken", "Zoek apotheek", "Zoek apotheek" ],
+     "responses": ["Geef naam van apotheek"],
+     "context": ["Zoek apotheek bij naam"]
+    }
+]
+}

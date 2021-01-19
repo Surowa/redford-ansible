@@ -1,0 +1,10 @@
+redfordbrain.local = 192.168.2.21
+(server)
+
+Speech recognition endpoint:
+
+http://redfordbrain.local:8888/client/dynamic/recognize
+
+Artificial intelligence endpoint:
+
+http://redfordbrain.local:5000/api/v1/speech
