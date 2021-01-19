@@ -1,4 +1,4 @@
-- name: Matrix
+- name: Matrix #installs matrix client.
   hosts: matrix #Should be ran to this host remotely as reboots are required.
   tasks:
   

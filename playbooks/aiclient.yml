@@ -1,0 +1,34 @@
+- name: AI Client #installs AI client. Change Python version for Python version used (probably best to preinstall Python for that)
+  hosts: localhost #Should be ran locally on AI client
+  tasks:
+    - name: Install the latest version of apps needed for Python and Pip to function
+      package:
+        name:
+          - python3
+          - python3-pip
+          - python3-venv
+          - python3-dev
+    - name: Install virtualenv via pip
+      pip:
+        name: virtualenv
+        executable: pip3
+      become: yes
+      become_user: root
+    - name: Manually create the initial virtualenv
+      command:
+        cmd: python3 -m venv /home/surowa/redford-ansible/ai_src/venv
+        chdir: /home/surowa/redford-ansible/ai_src/venv
+        creates: "/home/surowa/redford-ansible/ai_src/venv"
+    - name: Install requirements
+      pip: 
+        requirements: /home/surowa/redford-ansible/ai_src/requirements.txt
+        virtualenv: /home/surowa/redford-ansible/ai_src/venv
+        virtualenv_python: python3.8.5 #change for action version output from:  python3 --version
+      tags:
+          - venv
+      environment:
+        PATH: "{{ ansible_env.PATH }}:{{ ansible_user_dir }}/.local/bin"
+    - name: Install NLTK
+      command:
+        cmd: sh install_dependencies.sh
+        chdir: /home/surowa/redford-ansible/ai_src/

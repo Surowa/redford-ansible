@@ -1,0 +1,13 @@
+tensorflow
+playsound
+lxml
+python-telegram-bot 
+et
+selenium
+bs4
+pandas
+numpy
+nltk
+suntime
+keras
+azure.cognitiveservices.speech

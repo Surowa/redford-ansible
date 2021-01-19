@@ -1,4 +1,4 @@
-# Installs Redford-Speech docker based server (custom port)
+# Installs Redford-Speech docker based SERVER (custom port)
 docker.io
 - name: Redfordspeech
   hosts: localhost #Should be ran on localhost
