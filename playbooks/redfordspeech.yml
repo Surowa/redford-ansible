@@ -1,5 +1,4 @@
 # Installs Redford-Speech docker based SERVER (custom port)
-docker.io
 - name: Redfordspeech
   hosts: localhost #Should be ran on localhost
   tasks:
@@ -9,7 +8,7 @@ docker.io
           - docker.io
           - python3
           - python3-pip
-     - name: Install docker sdk python package
+    - name: Install docker sdk python package
       pip:
         name: docker
     - name: Start service docker, if stopped
@@ -24,9 +23,12 @@ docker.io
         append: yes
     - name: pull redfordspeech docker image
       docker_image:
-        name: superrobertwa/redfordspeech
+        name: superrobertwa/redfordspeech:latest
+        source: pull
     - name: Start container with startup script
-      community.general.docker_container:
+      docker_container:
         name: redfordserver
-        image: superrobertwa/redfordspeech
+        image: superrobertwa/redfordspeech:latest
         command: "./start.sh"
+        state: started
+        recreate: yes
