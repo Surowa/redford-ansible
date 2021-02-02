@@ -39,8 +39,6 @@
         src=/home/pi/redford-ansible/files/services/redfordschedule.service.j2
         dest=/etc/systemd/system/redfordschedule.service
         mode=644
-        notify:
-          - reload systemctl
     - name: RedfordSchedule | Start RedfordSchedule
       service: 
         name=redfordschedule.service 
