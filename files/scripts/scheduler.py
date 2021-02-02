@@ -62,7 +62,7 @@ darktime = daylightsavingsunset.strftime('%H:%M')
 lighttime = daylightsavingsunrise.strftime('%H:%M')
 
 schedule.every().day.at("08:00").do(PompAan)
-schedule.every(10).minutes.do(GuineaPigVideo)
+schedule.every(10).minutes.do(WaterkokerUit)
 #schedule.every(120).minutes.do(GuineaPigVideo)
 schedule.every().day.at("23:00").do(PompUit)
 
