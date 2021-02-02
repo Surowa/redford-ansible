@@ -16,22 +16,13 @@
 			}],
 			"state": "off"
 		},
-		"aquariumpomp": {
+		"unknown": {
 			"protocol": [ "kaku_switch" ],
 			"id": [{
 				"id": 33102848,
 				"unit": 3
 			}],
 			"state": "off"
-		},
-		"televisie": {
-			"protocol": [ "lirc" ],
-			"id": [{
-				"remote": "samsung"
-			}],
-			"code": "000000000000e204",
-			"repeat": 1,
-			"button": "KEY_POWER"
 		},
 		"lamp3": {
 			"protocol": [ "kaku_switch" ],
@@ -45,22 +36,17 @@
 	"rules": {},
 	"gui": {
 		"lamp1": {
-			"name": "TV-schakelaar",
-			"group": [ "Woonkamer" ],
-			"media": [ "all" ]
-		},
-		"lamp2": {
 			"name": "Lamp woonkamer",
 			"group": [ "Woonkamer" ],
 			"media": [ "all" ]
 		},
-		"lamp3": {
-			"name": "Lamp slaapkamer",
-			"group": [ "Slaapkamer" ],
+		"lamp2": {
+			"name": "Waterkoker",
+			"group": [ "Woonkamer" ],
 			"media": [ "all" ]
 		},
-		"aquariumpomp": {
-			"name": "Zuurstofpomp vissen",
+		"lamp3": {
+			"name": "Aquariumpomp",
 			"group": [ "Woonkamer" ],
 			"media": [ "all" ]
 		}

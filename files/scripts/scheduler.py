@@ -53,7 +53,7 @@ def KerstboomAan():
 darktime = daylightsavingsunset.strftime('%H:%M')
 lighttime = daylightsavingsunrise.strftime('%H:%M')
 
-schedule.every().day.at("10:00").do(PompAan)
+schedule.every().day.at("08:00").do(PompAan)
 #schedule.every().day.at("11:00").do(LongFishVideo)
 #schedule.every().day.at("16:00").do(LongFishVideo)
 #schedule.every(120).minutes.do(GuineaPigVideo)
