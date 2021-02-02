@@ -34,14 +34,10 @@
       service:
         name: pilight
         state: started
-    - name: RedfordSchedule | Create environment file
-      template: 
-        src=/home/pi/redford-ansible/files/services/redfordschedule.env.j2 
-        dest=/etc/sysconfig/redfordschedule
     - name: RedfordSchedule | Create Unit file
       template: 
         src=/home/pi/redford-ansible/files/services/redfordschedule.service.j2
-        dest=/lib/systemd/system/redfordschedule.service
+        dest=/etc/systemd/system/redfordschedule.service
         mode=644
       notify:
         - reload systemctl
