@@ -32,6 +32,14 @@ def PompUit():
     os.system('sudo pilight-send -p kaku_switch -i 25544186 -u 2 -f')
     return
 
+def WaterkokerUit():
+    os.system('sudo pilight-send -p kaku_switch -i 25544186 -u 1 -f')
+    return
+
+def WaterkokerAan():
+    os.system('sudo pilight-send -p kaku_switch -i 25544186 -u 1 -t')
+    return
+
 def AqualichtAan():
     os.system('sudo pilight-send -p kaku_switch -i 25544186 -u 0 -t')
     return
@@ -41,27 +49,23 @@ def AquaLichtUit():
     return
 
 def GuineaPigVideo():
-    os.system("python3 guineapigvideo.py")
+    os.system("python3 /home/pi/redford-ansible/files/scripts/guineapigvideo.py")
     return
     
 def KerstboomUit():
-    os.system("sudo sh kerstboom_uit.sh")
+    os.system("sudo sh /home/pi/redford-ansible/files/scripts/kerstboom_uit.sh")
     
 def KerstboomAan():
-    os.system("sudo sh kerstboom_aan.sh")
+    os.system("sudo sh /home/pi/redford-ansible/files/scripts/kerstboom_aan.sh")
     
 darktime = daylightsavingsunset.strftime('%H:%M')
 lighttime = daylightsavingsunrise.strftime('%H:%M')
 
 schedule.every().day.at("08:00").do(PompAan)
-#schedule.every().day.at("11:00").do(LongFishVideo)
-#schedule.every().day.at("16:00").do(LongFishVideo)
+schedule.every(10).minutes.do(GuineaPigVideo)
 #schedule.every(120).minutes.do(GuineaPigVideo)
 schedule.every().day.at("23:00").do(PompUit)
-schedule.every().day.at(darktime).do(KerstboomAan)
-schedule.every().day.at(darktime).do(AqualichtAan)
-schedule.every().day.at("23:00").do(KerstboomUit)
-schedule.every().day.at("23:00").do(AquaLichtUit)
+
 
 while True:
         schedule.run_pending()
