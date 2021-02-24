@@ -18,13 +18,13 @@ import RedfordCommands as redford
 import RedfordNLP as redfordnlp
 import numpy as np
 from keras.models import load_model
-model = load_model('chatbot_model.h5')
+model = load_model('/home/surowa/redford-ansible/ai_src/chatbot_model.h5')
 import json
 import random
 import pickle
-intents = json.loads(open('intents.json').read())
-words = pickle.load(open('words.pkl','rb'))
-classes = pickle.load(open('classes.pkl','rb'))
+intents = json.loads(open('/home/surowa/redford-ansible/ai_src/intents.json').read())
+words = pickle.load(open('/home/surowa/redford-ansible/ai_src/words.pkl','rb'))
+classes = pickle.load(open('/home/surowa/redford-ansible/ai_src/classes.pkl','rb'))
 
 
 command = sys.argv[1] #Get first argument command. 

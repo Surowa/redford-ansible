@@ -21,6 +21,16 @@
         name: 'pi'
         groups: docker
         append: yes
+    - name: add textclient service files
+      template: 
+        src=/home/surowa/redford-ansible/files/services/redfordtextclient.service.j2
+        dest=/etc/systemd/system/redfordtextclient.service
+        mode=644
+    - name: add service that implemements text client
+      service: 
+        name=redfordtextclient.service 
+        state=started
+        enabled=yes
     - name: pull redfordspeech docker image
       docker_image:
         name: superrobertwa/redfordspeech:latest

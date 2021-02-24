@@ -4,6 +4,7 @@ Description=RedfordScheduler
 [Service]
 ExecStart=/usr/bin/python3 /home/pi/redford-ansible/files/scripts/scheduler.py
 User=pi
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

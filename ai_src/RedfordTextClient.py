@@ -31,7 +31,7 @@ if __name__ == '__main__':
             if latestupdateid !=  startid:
                 print("Action executed for command: " + latestupdate.message.text)
                 command = latestupdate.message.text
-                os.system("python3 Redford.py \"" + command + "\" telegram")
+                os.system("python3 /home/surowa/redford-ansible/ai_src/Redford.py \"" + command + "\" telegram")
                 startid = latestupdateid
                 
             else:

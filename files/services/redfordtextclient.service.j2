@@ -1,0 +1,11 @@
+[Unit]
+Description=RedfordTextClient
+
+[Service]
+ExecStart=/home/surowa/redford-ansible/ai_src/venv/bin/python /home/surowa/redford-ansible/ai_src/RedfordTextClient.py
+User=surowa
+Restart=always
+WorkingDirectory=/home/surowa/redford-ansible/ai_src
+
+[Install]
+WantedBy=multi-user.target
