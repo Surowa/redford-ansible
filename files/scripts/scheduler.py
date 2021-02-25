@@ -89,11 +89,13 @@ schedule.every().day.at("08:00").do(PompAan)
 schedule.every().day.at("15:00").do(AqualichtAan)
 schedule.every().day.at(daylightsavingsunset).do(LampNaastBankAan)
 schedule.every().day.at(daylightsavingsunset).do(TvMeubelLampAan)
+schedule.every().day.at(daylightsavingsunset).do(BuitenLichtAan)
 
 schedule.every().day.at("22:30").do(AquaLichtUit)
 schedule.every().day.at("23:00").do(PompUit)
 schedule.every().day.at("23:15").do(LampNaastBankUit)
 schedule.every().day.at("23:30").do(TvMeubelLampUit)
+schedule.every().day.at("23:30").do(BuitenLichtUit)
 
 schedule.every(10).minutes.do(WaterkokerUit)
 #schedule.every(120).minutes.do(GuineaPigVideo)
