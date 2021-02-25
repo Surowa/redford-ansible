@@ -60,7 +60,7 @@
 	"rules": {},
 	"gui": {
 		"lamp1": {
-			"name": "Lamp aquarium",
+			"name": "Lamp naast bank",
 			"group": [ "Woonkamer" ],
 			"media": [ "all" ]
 		},
@@ -85,7 +85,7 @@
 			"media": [ "all" ]
 		},
 		"lamp6": {
-			"name": "Lamp naast bank",
+			"name": "Lamp aquarium",
 			"group": [ "Woonkamer" ],
 			"media": [ "all" ]
 		}
