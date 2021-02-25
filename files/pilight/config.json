@@ -31,12 +31,36 @@
 				"unit": 2
 			}],
 			"state": "on"
+		},
+		"lamp4": {
+			"protocol": [ "kaku_switch" ],
+			"id": [{
+				"id": 38045566,
+				"unit": 0
+			}],
+			"state": "on"
+		},
+		"lamp5": {
+			"protocol": [ "kaku_switch" ],
+			"id": [{
+				"id": 38045566,
+				"unit": 1
+			}],
+			"state": "on"
+		},
+		"lamp6": {
+			"protocol": [ "kaku_switch" ],
+			"id": [{
+				"id": 38045566,
+				"unit": 2
+			}],
+			"state": "on"
 		}
 	},
 	"rules": {},
 	"gui": {
 		"lamp1": {
-			"name": "Lamp woonkamer",
+			"name": "Lamp aquarium",
 			"group": [ "Woonkamer" ],
 			"media": [ "all" ]
 		},
@@ -47,6 +71,21 @@
 		},
 		"lamp3": {
 			"name": "Aquariumpomp",
+			"group": [ "Woonkamer" ],
+			"media": [ "all" ]
+		},
+		"lamp4": {
+			"name": "Lamp buiten",
+			"group": [ "Buiten" ],
+			"media": [ "all" ]
+		},
+		"lamp5": {
+			"name": "Lamp tv meubel",
+			"group": [ "Woonkamer" ],
+			"media": [ "all" ]
+		},
+		"lamp6": {
+			"name": "Lamp naast bank",
 			"group": [ "Woonkamer" ],
 			"media": [ "all" ]
 		}
