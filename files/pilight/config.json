@@ -60,8 +60,8 @@
 	"rules": {},
 	"gui": {
 		"lamp1": {
-			"name": "Lamp naast bank",
-			"group": [ "Woonkamer" ],
+			"name": "Lamp buiten",
+			"group": [ "Buiten" ],
 			"media": [ "all" ]
 		},
 		"lamp2": {
@@ -75,13 +75,13 @@
 			"media": [ "all" ]
 		},
 		"lamp4": {
-			"name": "Lamp buiten",
-			"group": [ "Buiten" ],
+			"name": "Lamp naast bank",
+			"group": [ "Woonkamer" ],
 			"media": [ "all" ]
 		},
 		"lamp5": {
-			"name": "Lamp tv meubel",
-			"group": [ "Woonkamer" ],
+			"name": "Lamp slaapkamer",
+			"group": [ "Slaapkamer" ],
 			"media": [ "all" ]
 		},
 		"lamp6": {
