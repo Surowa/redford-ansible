@@ -5,7 +5,7 @@ import time
 import os
 import datetime
 from suntime import Sun, SunTimeException
-timedelta = 1 #Number of hours beyond GMT, in summertime extra hour because of daylight saving, then make it 2 temporarily
+timedelta = 2 #Number of hours beyond GMT, in summertime extra hour because of daylight saving, then make it 2 temporarily
 latitude = 50.89
 longitude = 5.75
 sun = Sun(latitude, longitude)
