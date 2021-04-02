@@ -1,0 +1,26 @@
+[{
+  "name": "Aquarium",
+  "id": "Aquarium",
+  "type": 1,
+  "localIP": "192.168.178.102",
+  "APName": "Legen..wait for it..dairy!",
+  "APIP": "192.168.178.102",
+  "temp": 2400,
+  "tempAlert": false,
+  "minTemp": 2400,
+  "maxTemp": 2600,
+  "tempAdj": 50,
+  "light": 800,
+  "lightAlert": false,
+  "minOnLight": 700,
+  "maxOnLight": 1024,
+  "lightOn": "08:00-15:00",
+  "minOffLight": 0,
+  "maxOffLight": 1024,
+  "lightOff": "21:00-07:00",
+  "waterLevelAlert": false,
+  "powerAlert": false,
+  "oneAlert": true,
+  "date": "2016/09/25 09:14"
+}
+]
