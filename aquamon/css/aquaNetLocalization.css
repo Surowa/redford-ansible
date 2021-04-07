@@ -24,21 +24,6 @@
 .temperatureAdjustment::before {
   content: "Temperature adjustment: ";
 }
-.light::before {
-  content: "Light: ";
-}
-.onLightRange::before {
-  content: "'ON' Light range: ";
-}
-.lightOn::before {
-  content: "'ON' Light schedule: ";
-}
-.offLightRange::before {
-  content: "'OFF' Light range: ";
-}
-.lightOff::before {
-  content: "'OFF' Light schedule: ";
-}
 .waterLevel::before {
   content: "Water level: ";
 }
@@ -48,16 +33,6 @@
 .waterLevel.low::after {
   content: "Low";
 }
-.power::before {
-  content: "Main power: ";
-}
-.power.on::after {
-  content: "On";
-}
-.power.off::after {
-  content: "Off";
-}
-
 button.save l::after {
   content: "Save"
 }

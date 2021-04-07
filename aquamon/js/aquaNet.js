@@ -6,24 +6,12 @@ $(document).ready(function() {
       var model = {
         id: "",     // Name of the module
         type: "master", // master or station
-        localIP: "",  // IP on the local domestic wifi network
-        APName: "",   // Name of the created wifi network
-        APIP: "",     // IP on the Access Point created wifi network
         temp: 0,
         tempAlert: "no",
         minTemp: 0,
         maxTemp: 0,
         tempAdj: 0,
-        light: 0,
-        lightAlert: "no",
-        "minOnLight": 0,
-        "maxOnLight": 0,
-        "lightOn": "",
-        "minOffLight": 0,
-        "maxOffLight": 0,
-        "lightOff": "",
         waterLevel: "high",
-        power: "on",         // off, on
         oneAlert: "no",
         date: ""
       };
@@ -34,9 +22,7 @@ $(document).ready(function() {
     parse: function(data) {
 
       data.oneAlert = data.oneAlert ? "isalert" : "noalert";
-      data.power = data.powerAlert ? "off" : "on";
       data.waterLevel = data.waterLevelAlert ? "low": "high" ;
-      data.lightAlert = data.lightAlert ? "isalert" : "noalert";
       data.tempAlert = data.tempAlert ? "isalert" : "noalert";
       data.type = data.type ? "master" : "station";
       data.temp = data.temp/100;
@@ -71,27 +57,11 @@ $(document).ready(function() {
   <div data="temperatureAdjustment" class="setting temperatureAdjustment"><%- tempAdj %><span class="icon icon-pencil"/>\
     <div class="editor temperatureAdjustment"><input type="number" class="tempAdj" value="<%- tempAdj %>"/><button class="save"><l/></button><span class="icon icon-cancel-circle"/></div>\
   </div>\
-  <div class="light <%- lightAlert %>"><%- light %><span class="icon icon-sad"/><span class="icon icon-smile"/></div>\
-  <div data="lightOn" class="setting lightOn"><%- lightOn %><span class="icon icon-pencil"/>\
-    <div class="editor lightOn"><input class="lightOn" value="<%- lightOn %>"/><button class="save"><l/></button><span class="icon icon-cancel-circle"/></div>\
-  </div>\
-  <div data="onLightRange" class="setting onLightRange"><%- minOnLight %> - <%- maxOnLight %><span class="icon icon-pencil"/>\
-    <div class="editor onLightRange"><input type="number" class="minOnLight" value="<%- minOnLight %>"/><input type="number" class="maxOnLight" value="<%- maxOnLight %>"/><button class="save"><l/></button><span class="icon icon-cancel-circle"/></div>\
-  </div>\
-  <div data="lightOff" class="setting lightOff"><%- lightOff %><span class="icon icon-pencil"/>\
-    <div class="editor lightOff"><input class="lightOff" value="<%- lightOff %>"/><button class="save"><l/></button><span class="icon icon-cancel-circle"/></div>\
-  </div>\
-  <div data="offLightRange" class="setting offLightRange"><%- minOffLight %> - <%- maxOffLight %><span class="icon icon-pencil"/>\
-    <div class="editor offLightRange"><input type="number" class="minOffLight" value="<%- minOffLight %>"/><input type="number" class="maxOffLight" value="<%- maxOffLight %>"/><button class="save"><l/></button><span class="icon icon-cancel-circle"/></div>\
-  </div>\
-  <div data="date" class="setting date"><%- date %><span class="icon icon-pencil"/>\
+    <div data="date" class="setting date"><%- date %><span class="icon icon-pencil"/>\
     <div class="editor date"><input class="date" value="<%- date %>"/><button class="save"><l/></button><span class="icon icon-cancel-circle"/></div>\
   </div>\
   <hr/>\
-  <div class="footer localIP"><%- localIP %></div>\
-  <div class="footer APName"><%- APName %></div>\
-  <div class="footer APIP"><span><%- APName %></span><%- APIP %></div>\
-</div>'),
+  </div>'),
     initialize: function() {
       this.listenTo(this.model, 'change', this.render);
     },
@@ -148,24 +118,6 @@ $(document).ready(function() {
       var send = false;
       // TODO: need to use localized message... or new "technical" messages not localized ? => modif arduino code, add many messages... :(
       switch(data) {
-        case "onLightRange":
-          var min = parent.find('input.minOnLight').val();
-          var max = parent.find('input.maxOnLight').val();
-          params.command = "light limits on: " + min  + '-' + max;
-          // update model
-          this.model.set('minOnLight', parseInt(min));
-          this.model.set('maxOnLight', parseInt(max));
-          send = true;
-          break;
-        case "offLightRange":
-          var min = parent.find('input.minOffLight').val();
-          var max = parent.find('input.maxOffLight').val();
-          params.command = "light limits off: " + min  + '-' + max;
-          // update model
-          this.model.set('minOffLight', parseInt(min));
-          this.model.set('maxOffLight', parseInt(max));
-          send = true;
-          break;
         case "temperatureRange":
           var min = parseFloat(parent.find('input.minTemp').val());
           var max = parseFloat(parent.find('input.maxTemp').val());
@@ -184,18 +136,6 @@ $(document).ready(function() {
           var date = parent.find('input.date').val();
           params.command = "time " + date;
           this.model.set('date', date);
-          send = true;
-          break;
-        case "lightOn":
-          var date = parent.find('input.lightOn').val();
-          params.command = "light schedule on: " + date;
-          this.model.set('lightOn', date);
-          send = true;
-          break;
-        case "lightOff":
-          var date = parent.find('input.lightOff').val();
-          params.command = "light schedule off: " + date;
-          this.model.set('lightOff', date);
           send = true;
           break;
       }
