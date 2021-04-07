@@ -1,6 +1,5 @@
 cd redford-ansible && git pull && cd
 sudo ansible-playbook redford-ansible/playbooks/redfordcam.yml
-sudo ansible-playbook redford-ansible/playbooks/aquamon.yml
 sudo systemctl daemon-reload
 echo 'Restarting Pilight...'
 sudo service pilight restart
