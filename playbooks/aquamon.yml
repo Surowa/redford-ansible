@@ -1,0 +1,23 @@
+- name: AquariumMonitor
+  hosts: localhost
+  tasks:
+    - name: Install the latest version apps needed for a webserver
+      package:
+        name:
+          - nginx
+        state: latest
+    - name: Add update script for easier updating
+      template:
+        src: /home/pi/redford-ansible/files/scripts/updateAquamon.sh
+        dest: /home/pi/updateAquamon.sh
+        owner: pi
+        group: pi
+        mode: '0755'
+    - name: Add aquarium monitoring repo
+      template:
+        src: /home/pi/redford-ansible/aquamon/*
+        dest: /var/www/html/
+        owner: pi
+        group: pi
+        mode: '0755'
+    
