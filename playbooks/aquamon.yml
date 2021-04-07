@@ -14,10 +14,10 @@
         group: pi
         mode: '0755'
     - name: Add aquarium monitoring repo
-      copy:
+      synchronize:
         src: /home/pi/redford-ansible/aquamon/
         dest: /var/www/html/
-        owner: pi
-        group: pi
-        mode: '0755'
+        rsync_opts:
+          - --include=*/
+          - --include=*
     
