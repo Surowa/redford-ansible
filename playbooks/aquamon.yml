@@ -8,14 +8,14 @@
         state: latest
     - name: Add update script for easier updating
       template:
-        src: /home/pi/redford-ansible/files/scripts/updateAquamon.sh
+        src: /home/pi/redford-ansible/aquamon
         dest: /home/pi/updateAquamon.sh
         owner: pi
         group: pi
         mode: '0755'
     - name: Add aquarium monitoring repo
-      template:
-        src: /home/pi/redford-ansible/aquamon/*
+      copy:
+        src: /home/pi/redford-ansible/aquamon/
         dest: /var/www/html/
         owner: pi
         group: pi
