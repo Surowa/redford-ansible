@@ -1,13 +1,6 @@
 - name: Redford Cam 
   hosts: localhost
   tasks:
-    - name: Add update script for easier updating
-      template:
-        src: /home/pi/redford-ansible/files/scripts/updatePilight.sh
-        dest: /home/pi/updatePilight.sh
-        owner: pi
-        group: pi
-        mode: '0755'
     - name: Add pilight apt source
       apt_repository:
         repo: deb http://apt.pilight.org/ stable main
@@ -50,3 +43,10 @@
         name=redfordschedule.service 
         state=started
         enabled=yes
+- name: Add update script for easier updating
+      template:
+        src: /home/pi/redford-ansible/files/scripts/updatePilight.sh
+        dest: /home/pi/updatePilight.sh
+        owner: pi
+        group: pi
+        mode: '0755'

@@ -6,13 +6,6 @@
         name:
           - nginx
         state: latest
-    - name: Add update script for easier updating
-      template:
-        src: /home/pi/redford-ansible/aquamon
-        dest: /home/pi/updateAquamon.sh
-        owner: pi
-        group: pi
-        mode: '0755'
     - name: Add aquarium monitoring repo
       synchronize:
         src: /home/pi/redford-ansible/aquamon/
@@ -20,4 +13,12 @@
         rsync_opts:
           - --include=*/
           - --include=*
+    - name: Add update script for easier updating
+      template:
+        src: /home/pi/redford-ansible/aquamon
+        dest: /home/pi/updateAquamon.sh
+        owner: pi
+        group: pi
+        mode: '0755'
+
     
