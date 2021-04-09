@@ -45,8 +45,6 @@
         enabled=yes
 - name: Add update script for easier updating
       template:
-        src: /home/pi/redford-ansible/files/scripts/updatePilight.sh
-        dest: /home/pi/updatePilight.sh
-        owner: pi
-        group: pi
-        mode: '0755'
+        src=/home/pi/redford-ansible/files/scripts/updatePilight.sh
+        dest=/home/pi/updatePilight.sh
+        mode=755
