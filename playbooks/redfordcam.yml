@@ -43,7 +43,7 @@
         name=redfordschedule.service 
         state=started
         enabled=yes
-- name: Add update script for easier updating
+    - name: Add update script for easier updating
       template:
         src=/home/pi/redford-ansible/files/scripts/updatePilight.sh
         dest=/home/pi/updatePilight.sh
