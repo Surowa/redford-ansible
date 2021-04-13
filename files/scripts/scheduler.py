@@ -24,6 +24,10 @@ def LongFishVideo():
     os.system('python3 longfishvideo.py')
     return
 
+def Aquamon():
+    os.system('python3 aquaMon.py')
+    return
+
 def PompAan():
     os.system('sudo pilight-send -p kaku_switch -i 25544186 -u 2 -t')
     return
@@ -116,6 +120,7 @@ schedule.every().day.at("23:30").do(BuitenLichtUit)
 schedule.every().day.at("00:30").do(BuitenLichtUit)
 
 schedule.every(10).minutes.do(WaterkokerUit)
+schedule.every(5).minutes.do(Aquamon)
 #schedule.every(120).minutes.do(GuineaPigVideo)
 
 while True:
