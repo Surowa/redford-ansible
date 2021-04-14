@@ -25,7 +25,7 @@ def LongFishVideo():
     return
 
 def Aquamon():
-    os.system('python3 aquaMon.py')
+    os.system('python3 /home/pi/redford-ansible/files/scripts/aquaMon.py')
     return
 
 def PompAan():
