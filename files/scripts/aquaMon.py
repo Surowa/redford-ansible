@@ -34,7 +34,7 @@ while time.time() < t_end:
         inttemp = int(temperature)
         if inttemp >= 2600:
             tempalert = "true"
-        elif inttemp <= 2300:
+        elif inttemp <= 2250:
             tempalert = "true"
         else:
             tempalert = "false"
@@ -54,7 +54,7 @@ while time.time() < t_end:
         inttemp = int(temperature)
         if inttemp >= 2600:
             tempalert = "true"
-        elif inttemp <= 2300:
+        elif inttemp <= 2250:
             tempalert = "true"
         else:
             tempalert = "false"
