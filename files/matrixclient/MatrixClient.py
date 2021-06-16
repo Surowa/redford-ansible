@@ -56,7 +56,7 @@ utterance = json_text['hypotheses'][0]['utterance']
 print(utterance)
 
 #Sent recognized text to AI to do something with it
-params = urllib.parse.urlencode(utterance)
+params = urllib.parse.quote(utterance)
 print(params)
 url = f"http://redfordbrain.local:5000/api/v1/speech?command='{params}'"
 command = f"curl --request GET --url {url}"
