@@ -19,7 +19,7 @@ def home():
 def api_all():
     # here we want to get the value of the recognized command (i.e. ?command=some-value)
     command = request.args.get('command')
-    response = subprocess.check_output(f"python3 '/home/surowa/Dropbox/Overige/nerdi/Redford/Redford.py' {command} speech", shell=True)
+    response = subprocess.check_output(f"python3 '/home/surowa/redford-ansible/ai_src/Redford.py' {command} speech", shell=True)
     return f"Command {command} given to Redford: {response}"
 
 app.run(host = '0.0.0.0',port=5000)
