@@ -2,6 +2,7 @@ import os
 import pyaudio
 import wave
 import requests
+import urllib
 import json
 from nltk.tokenize import TreebankWordTokenizer
 tokenizer = TreebankWordTokenizer()
@@ -53,10 +54,11 @@ json_text = json.loads(str(understood_text))
 print(json_text)
 utterance = json_text['hypotheses'][0]['utterance']
 print(utterance)
-utterance_tokenenized = tokenizer.tokenize(utterance)
 
 #Sent recognized text to AI to do something with it
-url = f"http://redfordbrain.local:5000/api/v1/speech?command='{utterance}'"
+params = urllib.parse.urlencode(utterance)
+print(params)
+url = f"http://redfordbrain.local:5000/api/v1/speech?command='{params}'"
 command = f"curl --request GET --url {url}"
 response = os.popen(command).read()
 print(response)
