@@ -56,7 +56,7 @@ print(utterance)
 utterance_tokenenized = tokenizer.tokenize(utterance)
 
 #Sent recognized text to AI to do something with it
-url = f"http://redfordbrain.local:5000/api/v1/speech?command={utterance_tokenenized}"
+url = f"http://redfordbrain.local:5000/api/v1/speech?command='{utterance_tokenenized}'"
 command = f"curl --request GET --url {url}"
 response = os.popen(command).read()
 print(response)
