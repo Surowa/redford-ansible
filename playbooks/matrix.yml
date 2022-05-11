@@ -1,14 +1,13 @@
 - name: Matrix #installs matrix client.
   hosts: matrix #Should be ran to this host remotely as reboots are required.
   tasks:
-  
-    - name: Add Matrix apt source
-      apt_repository:
-        repo: deb https://apt.matrix.one/raspbian buster main
-        state: present
     - name: Add Matrix APT key
       apt_key:
         url: https://apt.matrix.one/doc/apt-key.gpg
+        state: present
+    - name: Add Matrix apt source
+      apt_repository:
+        repo: deb https://apt.matrix.one/raspbian buster main
         state: present
     - name: Run the equivalent of "apt-get update" as a separate step
       apt:
