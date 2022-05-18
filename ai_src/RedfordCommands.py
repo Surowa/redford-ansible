@@ -306,5 +306,37 @@ def VerwijderNotitie(notitietitel):
     cur.execute(query,val)
     conn.commit()
     conn.close()
-    
 
+def HaalWolkendichtheidOpText():
+    import requests
+    import json
+    from requests.auth import HTTPBasicAuth
+    sleutel = "E5HdOxTItp_UluSu4n8x3RFfBBWHb7Zn"
+    solcast_uri = "https://api.solcast.com.au/world_radiation/estimated_actuals?latitude=50.921978&longitude=5.749388&hours=168"
+    headers = {'accept': 'application/json'}
+    request = requests.get(solcast_uri, auth=HTTPBasicAuth(sleutel, ''), headers=headers)
+    response = request.json()
+    cloudiness = response['estimated_actuals'][0]['cloud_opacity']
+    if cloudiness >= 70:
+        result = "Cloudy weather"
+    elif 31 <= cloudiness <= 69:
+        result = "Partly cloudy currently"
+    else:
+        result = "Clear weather"
+    return result
+
+def HaalWolkendichtheidOpPercentage():
+    import requests
+    import json
+    from requests.auth import HTTPBasicAuth
+    sleutel = "E5HdOxTItp_UluSu4n8x3RFfBBWHb7Zn"
+    solcast_uri = "https://api.solcast.com.au/world_radiation/estimated_actuals?latitude=50.921978&longitude=5.749388&hours=168"
+    headers = {'accept': 'application/json'}
+    request = requests.get(solcast_uri, auth=HTTPBasicAuth(sleutel, ''), headers=headers)
+    response = request.json()
+    cloudiness = response['estimated_actuals'][0]['cloud_opacity']
+    return cloudiness
+
+def VoerVissen():
+    # https://reefbuilders.com/2013/08/31/neptune-afs-automatic-feeding-system-hobbys-controllable-fish-feeder/
+    return

@@ -58,6 +58,11 @@
      "patterns": ["Geef me een apotheek", "Zoek apotheek", "Lijst van apotheken", "Zoek apotheek", "Zoek apotheek" ],
      "responses": ["Geef naam van apotheek"],
      "context": ["Zoek apotheek bij naam"]
+    },
+    {"tag": "Spreek tekst",
+        "patterns": ["Activeer uitspreekmodus", "Activeer spraakmodus", "Tekst-naar-spraak", "Uitspreken van tekst", "Activeer spreekmodus" ],
+        "responses": ["SPRAAKMODUS_RESPONSE"],
+        "context": ["Tekst naar spraak"]
     }
 ]
 }

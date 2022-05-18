@@ -221,5 +221,8 @@ elif "POMP_UIT_RESPONSE" in result:
         redford.TelegramStuurBericht(bericht)
     else:
         redford.SpreekTekst(bericht)
+elif "SPRAAKMODUS_RESPONSE" in result:
+    os.chdir("/home/surowa/Documents/witchervoice/Transformer-TTS/")
+    os.system('python3 synthesis.py --sentence "Please make it stop" && aplay samples/test.wav')
 else:
     redford.TelegramStuurBericht(result)
